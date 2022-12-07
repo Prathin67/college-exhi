@@ -1,0 +1,18 @@
+<app-head></app-head>
+<div class="i">
+    <mat-card class="example-card">
+        <mat-card-header>
+
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img  class="img" mat-card-image src="assets\images.jpg" >
+    </mat-card>
+        
+    <app-ondetails [data]="nameDetails"(parent)="editRow($event)" (deltparent)="deleteRow(nameDetails.id)"></app-ondetails>
+        
+    
+      
+
+</div>

@@ -1,0 +1,100 @@
+<div class="full">
+    <nav class="img">
+        <img src="\assets\Muraai_Logo.jpg">
+    </nav>
+    <div>
+        <button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <!-- <div class="both"> -->
+        <h1  appColorchng class="title">Muraai information </h1>
+        
+    <!-- </div> -->
+    <div class="icon">
+        
+    <mat-form-field class="search" >
+
+        <input matInput type="search" placeholder="search" #search>
+
+    </mat-form-field >
+    
+        <button  class="srch" (click)="onSearch(search.value)"><mat-icon class="ico">search_icon</mat-icon></button>
+
+
+    </div>
+   
+    
+   
+
+  
+    <div class="bu">
+        <button  appBtnhigh class="btn"  (click)="addStudent()" *ngIf="loggedIn$ | async">Add</button>
+
+
+        <button *ngIf="loggedIn$|async" class="lol" [matMenuTriggerFor]="menu">{{f |titlecase}}{{l |titlecase}}</button>
+        <mat-menu #menu="matMenu">
+            <mat-card class="box">
+                <mat-card-header >
+
+                    <mat-card-title>{{name}}</mat-card-title>
+
+                </mat-card-header>
+
+                <mat-card-content>
+                    <h3>{{a}}</h3>
+                    
+                </mat-card-content>
+            </mat-card>
+
+        </mat-menu> 
+
+    </div>
+</div>
+<mat-sidenav-container class="big">
+    <mat-sidenav #snav mode="push" style="width: 20%;">
+        <mat-nav-list *ngIf="loggedIn$ | async">
+            <a  mat-list-item routerLink="/menu-cmp" (click)="snav.toggle()">Registration</a>
+            <a mat-list-item routerLink="/topics-exh" (click)="snav.toggle()">Topics</a>
+            <a mat-list-item routerLink="/wishlist" (click)="snav.toggle()">Wishlist</a>
+            <a mat-list-item (click)="Out()">LOGOUT</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+        
+
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+    
+
+    
+
+
+  
+      
+
+    
+       
+
+<!-- </div> -->
+<!-- <mat-drawer-container> -->
+<!--     
+    <mat-drawer #drawer>
+      <button  mat-button (click)="reg()" >Registraton</button>
+      <br><br>
+      <button  mat-button (click)="exhi()" >Topic of Exhibition</button>
+      <br><br>
+      <button  mat-button (click)="wish()" >Wishlist</button>
+      <br><br>
+  
+      <button  mat-button (click)="Out()" >LOGOUT</button>
+        
+    </mat-drawer>
+    <div class="example-sidenav-content">
+  
+      <mat-icon type="button" mat-button (click)="drawer.toggle()">menu</mat-icon>
+  
+    </div> -->

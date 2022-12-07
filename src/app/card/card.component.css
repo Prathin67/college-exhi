@@ -1,0 +1,15 @@
+.img{
+    max-width: 400px;
+
+}
+
+.lol{
+  padding-left: 30px;
+}
+.i{
+    display: flex;
+    align-items:left;
+    justify-content: left;
+    padding: 10px;
+}
+    

@@ -1,0 +1,47 @@
+
+<!-- <app-head></app-head> -->
+<!-- <mat-sidenav-container>
+    
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+        </button>
+        <mat-sidenav #sidenav>
+            <mat-nav-list>
+                <button (click)="go()" mat-list-item>Home></button>
+            </mat-nav-list>
+    
+    </mat-sidenav>
+</mat-sidenav-container> -->
+
+
+<div class="gg">
+    <form [formGroup]="formdata" (ngSubmit)="login(formdata.value)">
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label for="User Name">User Name</mat-label><br>
+                <input matInput type="text" formControlName="email">
+
+            </mat-form-field>
+           
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+            <mat-label for="User Name">Password</mat-label><br>
+            <input matInput type="password" formControlName="password">
+
+
+            </mat-form-field>
+
+            
+            
+        </div>
+        <button mat-stroked-button (click)="openSnackBar()"(click)="login">login</button>
+
+    </form>
+    <br>
+    
+
+    <!-- <button (click)="reg()">REGISTER HERE </button> -->
+
+
+</div>

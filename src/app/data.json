@@ -1,0 +1,84 @@
+{
+  "ELEMENT_DATA": [
+    {
+      "slno": "5",
+      "name": "zozc",
+      "email": "d;cp;d",
+      "class": "9",
+      "topic": "soft",
+      "id": "5",
+      "wishlist": false
+    },
+    {
+      "slno": "6",
+      "name": "psdopasd",
+      "email": "sad",
+      "class": "8",
+      "topic": "idispo",
+      "id": "6",
+      "wishlist": false
+    },
+    {
+      "slno": "7",
+      "name": "iuy",
+      "email": "szfzf",
+      "class": "7",
+      "topic": "awsretdr",
+      "id": "7",
+      "wishlist": true
+    },
+    {
+      "slno": "8",
+      "name": "pospoa",
+      "email": "xzcxz",
+      "class": "8",
+      "topic": "acs",
+      "id": "8",
+      "wishlist": true
+    },
+    {
+      "slno": "10",
+      "name": "pll",
+      "email": "sxsxax",
+      "class": "8",
+      "topic": "oihj",
+      "id": "10"
+    }
+  ],
+  "cards": [
+    {
+      "title": "IT",
+      "description": "MAKE WONDERS WITH INFORMATION TECHNOLOGY",
+      "event": "IT QUIZ",
+      "image": "https://wallpapercave.com/wp/wp7039147.png"
+    },
+    {
+      "title": "MECANICAL",
+      "description": "some more things about the software side",
+      "event": "PROJECT PRESENTATION,AUTOCAD",
+      "image": "https://wallpapercave.com/wp/wp4971694.jpg"
+    },
+    {
+      "title": "ECE",
+      "description": "INTERACTION TO MICROWORLD",
+      "event": "PAPER PRESENTATION,SEMINAR",
+      "image": "https://wallpapercave.com/wp/wp2700096.jpg"
+    },
+    {
+      "title": "SPORTS",
+      "description": "",
+      "event": "INDOOR GAMES AND QUIZ",
+      "image": "https://wallpapercave.com/wp/wp8095300.jpg"
+    },
+    {
+      "title": "software",
+      "description": "some more things about the software side"
+    },
+    {
+      "title": "SHORT FILM COMPETION",
+      "description": "REALITY TO REEL",
+      "event": "SCREENIG OF YOUR FILMS",
+      "image": "https://wallpapercave.com/wp/wp10816093.jpg"
+    }
+  ]
+}

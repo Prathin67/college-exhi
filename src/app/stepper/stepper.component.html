@@ -1,0 +1,206 @@
+<mat-stepper>
+    <mat-step [stepControl]="firstFormGroup">
+
+        <form [formGroup]="firstFormGroup" (ngSubmit)="form1()" #formone="ngForm">
+  
+            <ng-template matStepLabel>slno</ng-template>
+  
+            <mat-form-field appearance="fill">
+  
+                <mat-label>slno</mat-label>
+  
+                <input matInput formControlName="slno" required>
+  
+            </mat-form-field>
+  
+            <div>
+  
+                <button mat-button matStepperNext>Next</button>
+  
+            </div>
+  
+        </form>
+  
+    </mat-step>
+  
+
+  <mat-step [stepControl]="secondFormGroup">
+
+      <form [formGroup]="secondFormGroup" (ngSubmit)="form2()" #formtwo="ngForm" >
+
+          <ng-template matStepLabel>Enter Your Name</ng-template>
+
+          <mat-form-field appearance="fill">
+
+              <mat-label>Name</mat-label>
+
+              <input matInput formControlName="name" required>
+
+          </mat-form-field><br>
+
+          <mat-form-field appearance="fill">
+
+            <mat-label>email</mat-label>
+
+            <input matInput formControlName="email" required>
+
+        </mat-form-field><br>
+
+
+          
+
+         
+
+          <div>
+
+              <button mat-button matStepperNext>Next</button>
+
+          </div>
+
+      </form>
+
+  </mat-step>
+
+  <mat-step [stepControl]="thirdFormGroup">
+
+      <form [formGroup]="thirdFormGroup" (ngSubmit)="form3()" #formthree="ngForm">
+
+          <ng-template matStepLabel>Class</ng-template>
+
+          <mat-form-field appearance="fill">
+
+              <mat-label>Class</mat-label>
+
+              <input matInput formControlName="class" required>
+
+          </mat-form-field>
+
+          <div>
+
+              <button mat-button matStepperNext>Next</button>
+
+          </div>
+
+      </form>
+
+  </mat-step>
+
+  <mat-step [stepControl]="fourthFormGroup" >
+
+      <form [formGroup]="fourthFormGroup" (ngSubmit)="form4()" #formfour="ngForm">
+        <ng-template matStepLabel>Topic</ng-template>
+
+          <mat-form-field appearance="fill">
+
+              <mat-label>Topic</mat-label>
+
+              <input matInput formControlName="topic" required autocomplete="off" autofocus="off">
+
+          </mat-form-field>
+
+          <div>
+
+              <button mat-button matStepperPrevious>Back</button>&nbsp;
+
+              <button mat-button matStepperNext>Next</button>
+
+          </div>
+
+      </form>
+
+  </mat-step>
+
+  <mat-step [stepControl]="fifthFormGroup" >
+
+      <form [formGroup]="fifthFormGroup" (ngSubmit)="form5()" #formfive="ngForm" >
+        <ng-template matStepLabel>skills</ng-template>
+
+          <mat-form-field appearance="fill">
+
+              <mat-label>skills</mat-label>
+
+              <input matInput formControlName="skills" required autocomplete="off" autofocus="off">
+
+          </mat-form-field>
+          <br><br>
+          <mat-radio-group aria-label="select the option">Gender;<br>
+            <mat-radio-button value="1">Male</mat-radio-button>
+            <mat-radio-button value="2">Female</mat-radio-button>
+            <mat-radio-button value="1">Others</mat-radio-button>
+
+          </mat-radio-group>
+
+          <div>
+
+              <button mat-button matStepperPrevious>Back</button>&nbsp;
+
+              <button mat-button matStepperNext>Next</button>
+
+          </div>
+
+      </form>
+
+  </mat-step>
+
+  <mat-step [stepControl]="sixthFormGroup" label="Address">
+
+      <form [formGroup]="sixthFormGroup"  (ngSubmit)="form6()" #formsix="ngForm">
+
+          <mat-form-field appearance="fill">
+
+              <mat-label>country</mat-label>
+
+              <mat-select [formControl]="country" name="country">
+
+                  <mat-option *ngFor="let country of countries" [value]="country">
+
+                      {{country.name}}
+
+                  </mat-option>
+
+              </mat-select>
+
+          </mat-form-field><br>
+
+          <mat-form-field appearance="fill">
+
+              <mat-label>State</mat-label>
+
+              <!-- <input matInput formControlName="state" required autocomplete="off" autofocus="off"> -->
+
+              <mat-select [formControl]="state" name="state">
+
+                  <mat-option *ngFor="let state of states" [value]="state">
+
+                      {{state.name}}
+
+                  </mat-option>
+
+              </mat-select>
+
+          </mat-form-field><br>
+
+          <div>
+
+              <button mat-button matStepperPrevious>Back</button>&nbsp;
+
+              <button mat-stroked-button type="submit" (click)="formone.ngSubmit.emit();formtwo.ngSubmit.emit();
+              formthree.ngSubmit.emit();formfour.ngSubmit.emit();formfive.ngSubmit.emit();formsix.ngSubmit.emit()">Submit</button>
+
+          </div>
+
+      </form>
+
+  </mat-step>
+
+ 
+
+<!-- </mat-vertical-stepper> -->
+
+<!-- <button mat-stroked-button type="submit" (click)="firstFormGroup.ngSubmit.emit();
+
+secondFormGroup.ngSubmit.emit(); 
+
+thirdFormGroup.ngSubmit.emit(); fourthFormGroup.ngSubmit.emit() ">submit</button> -->
+
+</mat-stepper>

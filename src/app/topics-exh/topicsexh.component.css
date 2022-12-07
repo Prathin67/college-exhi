@@ -1,0 +1,22 @@
+
+.example-card{
+    max-width: 400px;
+}
+
+ .row{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+    
+.example-header-image{
+    /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
+    background-size: cover;
+}
+.des{
+    font-style: oblique;
+}
+.title{
+    text-align: center;
+}

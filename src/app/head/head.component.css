@@ -1,0 +1,70 @@
+.title{
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: top;
+    
+    
+    
+}
+.head{
+    background-color: rgb(254, 8, 8);
+}
+
+.lol{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    background-color: rgb(14, 225, 232);
+    
+    
+}
+.full{
+    background-color: cadetblue;
+    
+
+}
+
+.box{
+    height: 50%;
+}
+.bu{
+    display:flex;
+    justify-content: right;
+  
+    
+}
+/* /* .srch{
+    float: right;
+
+} */
+/* .srchic{
+    float: right;
+
+} */ */
+
+.both{
+    display: flex;
+    justify-content: center;
+}
+/* .bar{
+    position:absolute;
+} */
+.icon{
+  position:absolute;
+  top: 8px;
+  right: 16px;
+  
+  
+}
+.ico{
+    background-color: transparent;
+}
+.btn{
+   position: absolute;
+   
+   border-top-left-radius: 8px;
+   left: 10px;
+   
+}
