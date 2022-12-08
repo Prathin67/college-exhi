@@ -33,18 +33,16 @@ export class LoginComponent implements OnInit{
   }
   login(data:any){
     this.service.login(data).subscribe(d =>{
-      console.log('---',d)
+      
       this.service.setLoginStatus(true)
       localStorage.setItem('logged in' , 'true')
       localStorage.setItem('email',data.email)
-       console.log(localStorage.getItem('logged in '))
+      
       this.router.navigate(['/menu-cmp'])
      
     });
   }
 
-  // reg(){
-  //   this.router.navigate(['stepper/'])
-  // }
+  
 
 }

@@ -70,7 +70,7 @@ export class StepperComponent implements OnInit {
   
      this.countries=Country.getAllCountries()
   
-      // console.log(Country.getAllCountries())
+     
   
   this.sixthFormGroup=new FormGroup({
   
@@ -85,43 +85,40 @@ export class StepperComponent implements OnInit {
   
     this.states=State.getStatesOfCountry(d.isoCode)
   
-    console.log('----',d)
-  
-    console.log('----',this.states)
-  
+    
   
   })
   
     }
 
     form1(){
-      console.log(this.firstFormGroup.value);
+     
       
     }
     
     form2(){
-      console.log(this.secondFormGroup.value);
+   
       
     }
     
     form3(){
-      console.log(this.thirdFormGroup.value);
+    
       
     }
     
     form4(){
-      console.log(this.fourthFormGroup.value);
+   
       
     }
     form5(){
-      console.log(this.fifthFormGroup.value)
+      
     }
     
     form6(){
-      // console.log(this.fifthFormGroup.value);
+     
       this.service.createELEMENT({...this.firstFormGroup.value,...this.secondFormGroup.value,...this.thirdFormGroup.value,...this.fourthFormGroup.value,
       id:this.firstFormGroup.value['slno']}).subscribe(a =>{
-        console.log('---',a);
+       
       })
       this.dialog.closeAll()
       

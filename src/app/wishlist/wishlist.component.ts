@@ -28,7 +28,7 @@ constructor(private service:SampleServiceService,private router:Router){}
     this.service.getELEMENT_DATA()
     this.dataSource=this.service.dataEvent$
     .pipe(map((n:any)=>{
-      console.log('---',n)
+     
 
       return(n.filter((a:any)=>a.wishlist))
     }))
@@ -36,10 +36,8 @@ constructor(private service:SampleServiceService,private router:Router){}
 
   }
   Out(){
-    console.log('ioiuoiu')
-    // localStorage.setItem('logged in' , 'false')
-    //    console.log(localStorage.getItem('logged in '))
-    //   this.router.navigate(['/menu-cmp'])
+   
+  
     localStorage.clear()
     this.router.navigate(['/login'])
   } 

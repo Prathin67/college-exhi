@@ -17,7 +17,7 @@ export class AddComponent implements OnInit {
   constructor(public dialog:MatDialog,private serv:SampleServiceService,@Inject(MAT_DIALOG_DATA) public data:any,private _snackBar:MatSnackBar){}
 
   ngOnInit():void{
-    console.log(this.data)
+    
     this.formdata = new FormGroup({
       slno : new FormControl ("",Validators.required),
       name : new FormControl(this.data?.name??"",Validators.required),
@@ -30,20 +30,20 @@ export class AddComponent implements OnInit {
 
     this.serv.createELEMENT({...data,id:data['slno']}).subscribe(s =>{
       window.location.reload();
-      console.log('=====',s);
+     
     })
     this.dialog.closeAll();
-    console.log('--',data)
+   
     
   }
 updt(details:any){
-  console.log('=iiu==',details)
+  
   
   this.serv.editELEMENT_DATA({...details,id:this.data.id}).subscribe(s=>{
 
-    console.log('===',s)
+   
     this.dialog.closeAll()
-    // window.location.reload()
+   
 
   })
 

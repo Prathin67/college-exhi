@@ -22,10 +22,8 @@ export class TopicsexhComponent implements OnInit {
   
   }
   Out(){
-    console.log('ioiuoiu')
-    // localStorage.setItem('logged in' , 'false')
-    //    console.log(localStorage.getItem('logged in '))
-    //   this.router.navigate(['/menu-cmp'])
+    
+ 
     localStorage.clear()
     this.router.navigate(['/login'])
   } 

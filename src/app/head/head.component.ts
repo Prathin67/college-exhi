@@ -1,38 +1,4 @@
-// import { Component, OnInit } from '@angular/core';
-// import { Observable, of } from 'rxjs';
-// import { SampleServiceService } from '../sample-service.service';
 
-
-// @Component({
-//   selector: 'app-head',
-//   templateUrl: './head.component.html',
-//   styleUrls: ['./head.component.css']
-// })
-// export class HeadComponent implements OnInit{
-
-// constructor(private dialogue){}
-
-
-  // dataSource:Observable<any>=of([{}])
-  
-
-  // ngOnInit():void{
-  //   this.dataSource=this.service.getELEMENT_DATA()
-  // }
-  // editRow(){
-  //   this.service.createELEMENT({
-  //       id: 100, 
-  //       name: "fdh", 
-  //       class: 12,
-  //       topic: "social",
-
-  //   },
-  //   ).subscribe((d: any)=>(
-  //     console.log("====",d)
-      
-  //   ))
-//   // }
-// }
 import { SelectorContext } from '@angular/compiler';
 import  { Component,OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -67,16 +33,11 @@ export class HeadComponent implements OnInit{
   addStudent(){
      this.dialog.open(StepperComponent)
 
-    // dialogRef.afterClosed().subscribe(result =>{
-    //   console.log(`dialog result: ${result}`);
-      
-    // })
+
   }
   Out(){
     console.log('ioiuoiu')
-    // localStorage.setItem('logged in' , 'false')
-    //    console.log(localStorage.getItem('logged in '))
-    //   this.router.navigate(['/menu-cmp'])
+   
     localStorage.clear()
     this.router.navigate(['/login'])
   
