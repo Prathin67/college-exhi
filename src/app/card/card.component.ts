@@ -37,7 +37,7 @@ export class CardComponent {
 
     })
 
-    dialogRef.afterClosed().subscribe({
+    dialogRef.afterClosed().subscribe(()=>{
       
     })
   }
