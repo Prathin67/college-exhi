@@ -14,20 +14,20 @@ import { StepperComponent } from '../stepper/stepper.component';
     styleUrls: ['./head.component.css']
 })
 export class HeadComponent implements OnInit{
-  a:any
+  mail:any
   name:any
-  f:any
-  l:any
+  firstName:any
+  lastName:any
   
   loggedIn$:Observable<any>=of(false)
 
   constructor(private dialog:MatDialog,private router:Router,private service:SampleServiceService){}
   ngOnInit(): void { 
     this.loggedIn$=this.service.loggedIn$
-    this.a=localStorage.getItem('email')
-    this.name=this.a?.split('.').join(' ').split('@',1).join('')
-    this.f=((this.name?.split(' ',1))[0])[0]
-    this.l=((this.name?.split(' ',2))[1])[0]
+    this.mail=localStorage.getItem('email')
+    this.name=this.mail?.split('.').join(' ').split('@',1).join('')
+    this.firstName=((this.name?.split(' ',1))[0])[0]
+    this.lastName=((this.name?.split(' ',2))[1])[0]
   }
 
   addStudent(){
@@ -36,7 +36,7 @@ export class HeadComponent implements OnInit{
 
   }
   Out(){
-    console.log('ioiuoiu')
+   
    
     localStorage.clear()
     this.router.navigate(['/login'])

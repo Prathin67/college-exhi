@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit{
       email:new FormControl(this.data?.email ?? ''),
       password: new FormControl(this.data?.password ?? '')
     });
-    console.log('--',this.data)
+    
     
     
   }
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit{
     this.router.navigate(['menu-cmp/'])
   }
   login(data:any){
-    this.service.login(data).subscribe(d =>{
+    this.service.login(data).subscribe(detail =>{
       
       this.service.setLoginStatus(true)
       localStorage.setItem('logged in' , 'true')

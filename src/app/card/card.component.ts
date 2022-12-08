@@ -17,10 +17,10 @@ export class CardComponent {
   
 
   ngOnInit(){
-    console.log('==id==',this.route.snapshot.params['id'])
-    this.service.getDetails(this.route.snapshot.params['id']).subscribe(x=>{
-      this.nameDetails=x
-      console.log('--',x)
+   
+    this.service.getDetails(this.route.snapshot.params['id']).subscribe(detail=>{
+      this.nameDetails=detail
+     
     })
   }
   deleteRow(id:any){
@@ -38,7 +38,7 @@ export class CardComponent {
     })
 
     dialogRef.afterClosed().subscribe(result=>{
-      console.log(`Dialog result:${result}`)
+      
     })
   }
 

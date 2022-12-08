@@ -27,10 +27,10 @@ constructor(private service:SampleServiceService,private router:Router){}
   ngOnInit() {
     this.service.getELEMENT_DATA()
     this.dataSource=this.service.dataEvent$
-    .pipe(map((n:any)=>{
+    .pipe(map((num:any)=>{
      
 
-      return(n.filter((a:any)=>a.wishlist))
+      return(num.filter((value:any)=>value.wishlist))
     }))
    
 
