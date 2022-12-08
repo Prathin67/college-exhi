@@ -28,10 +28,11 @@ export class AddComponent implements OnInit {
   }
   submit(data:any){
 
-    this.serv.createELEMENT({...data,id:data['slno']}).subscribe(detail =>{
-      window.location.reload();
+    this.serv.createELEMENT({...data,id:data['slno']}).subscribe({
+      
      
     })
+    window.location.reload();
     this.dialog.closeAll();
    
     

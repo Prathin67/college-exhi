@@ -77,10 +77,11 @@ export class MenuCmpComponent implements OnInit {
   }
   star(data:any){
     this.service.updatewish(data)
-    .subscribe(detail=>{
+    .subscribe({
       
-      window.location.reload()
+      
     })
+    window.location.reload()
 
   }
 

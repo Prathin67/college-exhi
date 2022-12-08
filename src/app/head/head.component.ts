@@ -56,7 +56,7 @@ export class HeadComponent implements OnInit{
   }
   onSearch(value:any){
 
-    console.log('------',value)
+    
     this.service.searchData(value)
 
   }
