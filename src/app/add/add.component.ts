@@ -28,10 +28,12 @@ export class AddComponent implements OnInit {
   }
   submit(data:any){
 
-    this.serv.createELEMENT({...data,id:data['slno']}).subscribe(s =>{
+    this.serv.createELEMENT({...data,id:data['slno']}).subscribe(()=>{
       window.location.reload();
+      
      
     })
+    
     this.dialog.closeAll();
    
     
@@ -39,18 +41,11 @@ export class AddComponent implements OnInit {
 updt(details:any){
   
   
-  this.serv.editELEMENT_DATA({...details,id:this.data.id}).subscribe(s=>{
+this.serv.editELEMENT_DATA({...details,id:this.data.id}).subscribe(data=>{
+this. dialog.closeAll();
+window.location.reload()
 
-   
-    this.dialog.closeAll()
-   
-
-  })
-
-  
-
-
-}
+})}
 snackbar(){
   this._snackBar.open("Updated")
 }

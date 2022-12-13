@@ -32,7 +32,7 @@
         <button  appBtnhigh class="btn"  (click)="addStudent()" *ngIf="loggedIn$ | async">Add</button>
 
 
-        <button *ngIf="loggedIn$|async" class="lol" [matMenuTriggerFor]="menu">{{f |titlecase}}{{l |titlecase}}</button>
+        <button *ngIf="loggedIn$|async" class="roundBttn" [matMenuTriggerFor]="menu">{{firstName |titlecase}}{{lastName |titlecase}}</button>
         <mat-menu #menu="matMenu">
             <mat-card class="box">
                 <mat-card-header >
@@ -42,7 +42,7 @@
                 </mat-card-header>
 
                 <mat-card-content>
-                    <h3>{{a}}</h3>
+                    <h3>{{mail}}</h3>
                     
                 </mat-card-content>
             </mat-card>
