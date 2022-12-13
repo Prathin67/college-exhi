@@ -16,7 +16,16 @@ const routes: Routes = [
    {path:'',component:LoginComponent},
    {path:'login',component:LoginComponent},
    {path:'stepper',component:StepperComponent},
-   {path:'topics-exh',component:TopicsexhComponent,canActivate:[canActivate]},
+   {path:'topics-exh',component:TopicsexhComponent,canActivate:[canActivate],
+   children:[
+    {path:'paper',component:TopicsexhComponent,canActivate:[canActivate]},
+    {path:'Science',component:TopicsexhComponent,canActivate:[canActivate]},
+    {path:'political',component:TopicsexhComponent,canActivate:[canActivate]},
+   ]
+  },
+  //  {path:'paper',component:TopicsexhComponent,canActivate:[canActivate]},
+  //  {path:'Science',component:TopicsexhComponent,canActivate:[canActivate]},
+  //  {path:'political',component:TopicsexhComponent,canActivate:[canActivate]},
    {path:'wishlist',component:WishlistComponent,canActivate:[canActivate]}
 ];
 

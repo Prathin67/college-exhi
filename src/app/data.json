@@ -1,22 +1,13 @@
 {
   "ELEMENT_DATA": [
     {
-      "slno": "5",
-      "name": "zozc",
-      "email": "d;cp;d",
-      "class": "9",
-      "topic": "soft",
-      "id": "5",
-      "wishlist": true
-    },
-    {
       "slno": "6",
       "name": "psdopasd",
       "email": "sad",
       "class": "8",
       "topic": "idispo",
       "id": "6",
-      "wishlist": false
+      "wishlist": true
     },
     {
       "slno": "7",
@@ -25,7 +16,7 @@
       "class": "7",
       "topic": "awsretdr",
       "id": "7",
-      "wishlist": true
+      "wishlist": false
     },
     {
       "slno": "8",
@@ -34,7 +25,7 @@
       "class": "8",
       "topic": "acs",
       "id": "8",
-      "wishlist": true
+      "wishlist": false
     },
     {
       "slno": "10",
@@ -42,15 +33,8 @@
       "email": "sxsxax",
       "class": "8",
       "topic": "oihj",
-      "id": "10"
-    },
-    {
-      "slno": "9",
-      "name": "psop",
-      "email": "jksxhx",
-      "class": "9",
-      "topic": "slkj",
-      "id": "9"
+      "id": "10",
+      "wishlist": true
     }
   ],
   "cards": [
@@ -79,13 +63,66 @@
       "image": "https://wallpapercave.com/wp/wp8095300.jpg"
     },
     {
-      "title": "software",
-      "description": "some more things about the software side"
+      "title": "POLITICAL SCIENCE",
+      "description": "some more things about the software side",
+      "image": ""
     },
     {
       "title": "SHORT FILM COMPETION",
       "description": "REALITY TO REEL",
       "event": "SCREENIG OF YOUR FILMS",
+      "image": "https://wallpapercave.com/wp/wp10816093.jpg"
+    }
+  ],
+  "political": [
+    {
+      "title": "SPEECH",
+      "event": "CURRENT SOCIAL RELEVANT ISSUES",
+      "image": "https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/07/10114853/Political-Science-Careers.jpg"
+    },
+    {
+      "title": "POLITICAL QUIZ",
+      "event": "POLITCAL RELATED ",
+      "description": "tfytfjtf",
+      "image": "https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/07/10114853/Political-Science-Careers.jpg"
+    },
+    {
+      "title": "DRAMA",
+      "event": "ANY SOCIAL ISSUES",
+      "image": "https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/07/10114853/Political-Science-Careers.jpg"
+    }
+  ],
+  "Science": [
+    {
+      "title": "EXERIMENTS",
+      "event": "Any Science",
+      "image": "https://wallpapercave.com/wp/wp10816093.jpg"
+    },
+    {
+      "title": "SEMINAR",
+      "event": "Life on Mars",
+      "image": "https://wallpapercave.com/wp/wp10816093.jpg"
+    },
+    {
+      "title": "GD",
+      "event": "NASA",
+      "image": "https://wallpapercave.com/wp/wp10816093.jpg"
+    }
+  ],
+  "paper": [
+    {
+      "title": "GD",
+      "event": "NASA",
+      "image": "https://wallpapercave.com/wp/wp10816093.jpg"
+    },
+    {
+      "title": "PAPER PRESENTING",
+      "event": "GLOBAL WARMING",
+      "image": "https://wallpapercave.com/wp/wp10816093.jpg"
+    },
+    {
+      "title": "SKIT",
+      "event": "NATURE",
       "image": "https://wallpapercave.com/wp/wp10816093.jpg"
     }
   ]

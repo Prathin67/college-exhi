@@ -1,7 +1,7 @@
 
 
 <div class="row row-cols-1 row-cols-md-3">
-    <div class="col-mb-4" *ngFor="let card of regestrcrd">
+    <div class="col-mb-4" *ngFor="let card of regestrcrd | async">
         <mat-card class="example-card">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>

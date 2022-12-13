@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 import { canActivate } from '../canActive';
 import { SampleServiceService } from '../sample-service.service';
 
@@ -13,6 +14,7 @@ import { SampleServiceService } from '../sample-service.service';
 export class LoginComponent implements OnInit{
   formdata:any
   data:any
+  onDestroy$= new Subject<boolean>()
 
   constructor(private router:Router,private _snackBar:MatSnackBar,private service:SampleServiceService){}
   ngOnInit(): void {
@@ -32,7 +34,7 @@ export class LoginComponent implements OnInit{
     this.router.navigate(['menu-cmp/'])
   }
   login(data:any){
-    this.service.login(data).subscribe(detail =>{
+    this.service.login(data).pipe(takeUntil(this.onDestroy$)).subscribe(() =>{
       
       this.service.setLoginStatus(true)
       localStorage.setItem('logged in' , 'true')
@@ -42,6 +44,12 @@ export class LoginComponent implements OnInit{
      
     });
   }
+  ngOnDestroy(): void {
+    this.onDestroy$.next(true)
+    this.onDestroy$.complete()
+    
+  }
+
 
   
 

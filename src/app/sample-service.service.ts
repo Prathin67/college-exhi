@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, from, Observable, Subject } from 'rxjs';
+import { cards, ELEMENT_DATA } from './model';
 
 
 
@@ -20,7 +21,7 @@ export class SampleServiceService {
   private message = new BehaviorSubject<string>('default message')
   getMessage = this.message.asObservable();
 
-  private dataSubject$: Subject<Object>= new Subject();
+  private dataSubject$: Subject<ELEMENT_DATA[]>= new Subject();
   dataEvent$ = this.dataSubject$.asObservable();
 
   API_URL = 'http://localhost:3000/ELEMENT_DATA';
@@ -29,9 +30,28 @@ export class SampleServiceService {
 
   card_url = ' http://localhost:3000/cards'
 
+  political_url = 'http://localhost:3000/political'
+
+  paper_url = 'http://localhost:3000/paper'
+
+  Science_url ='  http://localhost:3000/Science'
+  
+
   constructor(private http :HttpClient) { }
 
-  data:any
+  data:ELEMENT_DATA[]=[]
+
+ getScience():Observable<cards[]>{
+  return this.http.get<cards[]>(this.Science_url)
+ }
+
+  getPaper():Observable<cards[]>{
+    return this.http.get<cards[]>(this.paper_url)
+  }
+
+  getPolitical():Observable<cards[]>{
+    return this.http.get<cards[]>(this.political_url)
+  }
 
   getcards(){
     return this.http.get(this.card_url)
@@ -44,7 +64,7 @@ export class SampleServiceService {
   }
 
   getELEMENT_DATA(){
-     this.http.get(this.API_URL).subscribe(val =>{
+     this.http.get(this.API_URL).subscribe((val:any) =>{
       this.dataSubject$.next(val);
       this.data = val
     })
