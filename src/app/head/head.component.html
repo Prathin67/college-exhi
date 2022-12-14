@@ -51,11 +51,34 @@
 
     </div>
 </div>
+
+
+
+
+    
 <mat-sidenav-container class="big">
+    
     <mat-sidenav #snav mode="push" style="width: 20%;">
         <mat-nav-list *ngIf="loggedIn$ | async">
             <a  mat-list-item routerLink="/menu-cmp" (click)="snav.toggle()">Registration</a>
-            <a mat-list-item routerLink="/topics-exh" (click)="snav.toggle()">Topics</a>
+            <!-- <a mat-list-item routerLink="/topics-exh" (click)="snav.toggle()">Topics</a> -->
+            <mat-accordion>
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        EXHIBITION
+                      </mat-panel-title>
+                      
+                      
+                    </mat-expansion-panel-header>
+                    <!-- <a mat-list-item routerLink="/topics-exh" (click)="snav.toggle()">Events</a> -->
+                    <a mat-list-item routerLink="/topics-exh/political" routerLinkActive="active" >Political Science</a>
+                    <a mat-list-item routerLink="/topics-exh/Science" routerLinkActive="active">Science</a>
+                    <a mat-list-item routerLink="/topics-exh/paper">Paper Presntation</a>
+                   
+                </mat-expansion-panel>
+             </mat-accordion>
+
             <a mat-list-item routerLink="/wishlist" (click)="snav.toggle()">Wishlist</a>
             <a mat-list-item (click)="Out()">LOGOUT</a>
         </mat-nav-list>
@@ -64,8 +87,9 @@
         <router-outlet></router-outlet>
         
 
-
     </mat-sidenav-content>
+    
+
 </mat-sidenav-container>
 
     

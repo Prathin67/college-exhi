@@ -3,6 +3,7 @@ import { FormBuilder,FormControl, FormGroup, Validators } from '@angular/forms';
 import { SampleServiceService } from '../sample-service.service';
 import { Country, State, City }  from 'country-state-city';
 import { MatDialog } from '@angular/material/dialog';
+import { Subject, takeUntil } from 'rxjs';
 
 
 
@@ -14,7 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class StepperComponent implements OnInit {
 
-  
+  onDestroy$= new Subject<boolean>()
 
   states:any
 
@@ -81,7 +82,7 @@ export class StepperComponent implements OnInit {
   
   })
 
-  this.country.valueChanges.subscribe((d:any)=>{
+  this.country.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe((d:any)=>{
   
     this.states=State.getStatesOfCountry(d.isoCode)
   
@@ -117,12 +118,18 @@ export class StepperComponent implements OnInit {
     form6(){
      
       this.service.createELEMENT({...this.firstFormGroup.value,...this.secondFormGroup.value,...this.thirdFormGroup.value,...this.fourthFormGroup.value,
-      id:this.firstFormGroup.value['slno']}).subscribe(a =>{
+      id:this.firstFormGroup.value['slno']}).pipe(takeUntil(this.onDestroy$)).subscribe(a =>{
        
       })
       this.dialog.closeAll()
       
     }
+    ngOnDestroy(): void {
+      this.onDestroy$.next(true)
+      this.onDestroy$.complete()
+      
+    }
+  
 
 
 

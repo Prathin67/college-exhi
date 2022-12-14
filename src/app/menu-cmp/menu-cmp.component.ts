@@ -1,18 +1,19 @@
-import { AfterViewInit, Component,OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component,OnDestroy,OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router, TitleStrategy } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject, Subscription, takeUntil } from 'rxjs';
 import { AddComponent } from '../add/add.component';
 import { SampleServiceService } from '../sample-service.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import { ELEMENT_DATA } from '../model';
 
 @Component({
   selector: 'app-menu-cmp',
   templateUrl: './menu-cmp.component.html',
   styleUrls: ['./menu-cmp.component.css']
 })
-export class MenuCmpComponent implements OnInit {
+export class MenuCmpComponent implements OnInit  {
   displayedColumns = [
     'slno',
     'name',
@@ -34,9 +35,19 @@ export class MenuCmpComponent implements OnInit {
 
 
   
-  dataSource:Observable<any>=of([{}])
+  dataSource:Observable<ELEMENT_DATA[]>=of([{
+
+  slno: '',
+  name:'',
+  email: '',
+  class: '',
+  topic:'',
+  id: '',
+  wishlist:false
+  }])
 
   
+  onDestroy$= new Subject<boolean>()
  
 
   ngOnInit():void{
@@ -50,12 +61,13 @@ export class MenuCmpComponent implements OnInit {
 
     })
 
-    dialogRef.afterClosed().subscribe(result=>{
+    dialogRef.afterClosed().pipe(takeUntil(this.onDestroy$)).subscribe(result=>{
      
     })
   }
+
   deleteRow(id:any){
-    this.service.deleteELEMENT_DATA(id).subscribe();
+    this.service.deleteELEMENT_DATA(id).pipe(takeUntil(this.onDestroy$)).subscribe();
   }
 
   Out(){
@@ -76,13 +88,18 @@ export class MenuCmpComponent implements OnInit {
     this.router.navigate(['/wishlist'])
   }
   star(data:any){
-    this.service.updatewish(data)
+    this.service.updatewish(data).pipe(takeUntil(this.onDestroy$))
     .subscribe(()=>{
       window.location.reload()
       
     })
     
 
+  }
+  ngOnDestroy(): void {
+    this.onDestroy$.next(true)
+    this.onDestroy$.complete()
+    
   }
 
 }

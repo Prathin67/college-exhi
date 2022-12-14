@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { filter, map, Observable, of } from 'rxjs';
+import { ELEMENT_DATA } from '../model';
 import { SampleServiceService } from '../sample-service.service';
 
 
@@ -17,7 +18,17 @@ export class WishlistComponent implements OnInit {
   'topic',
   'star'
 ]
-dataSource:Observable<any>=of([{}])
+dataSource:Observable<ELEMENT_DATA[]>=of([{
+
+  slno: '',
+  name:'',
+  email: '',
+  class: '',
+  topic:'',
+  id: '',
+  wishlist:false
+
+}])
   
 
 constructor(private service:SampleServiceService,private router:Router){}

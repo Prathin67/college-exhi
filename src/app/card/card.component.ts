@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 import { AddComponent } from '../add/add.component';
 import { SampleServiceService } from '../sample-service.service';
 
@@ -11,6 +12,7 @@ import { SampleServiceService } from '../sample-service.service';
 })
 export class CardComponent {
   nameDetails:any
+  onDestroy$= new Subject<boolean>()
  
 
   constructor(private route:ActivatedRoute , private service:SampleServiceService,private dialog:MatDialog,private router:Router){}
@@ -18,13 +20,13 @@ export class CardComponent {
 
   ngOnInit(){
    
-    this.service.getDetails(this.route.snapshot.params['id']).subscribe(detail=>{
+    this.service.getDetails(this.route.snapshot.params['id']).pipe(takeUntil(this.onDestroy$)).subscribe(detail=>{
       this.nameDetails=detail
      
     })
   }
   deleteRow(id:any){
-    this.service.deleteELEMENT_DATA(id).subscribe(d=>
+    this.service.deleteELEMENT_DATA(id).pipe(takeUntil(this.onDestroy$)).subscribe(d=>
       {this.router.navigate(["menu-cmp"])});
   }
   
@@ -37,9 +39,14 @@ export class CardComponent {
 
     })
 
-    dialogRef.afterClosed().subscribe(()=>{
+    dialogRef.afterClosed().pipe(takeUntil(this.onDestroy$)).subscribe(()=>{
       
     })
+  }
+  ngOnDestroy(): void {
+    this.onDestroy$.next(true)
+    this.onDestroy$.complete()
+    
   }
 
 }

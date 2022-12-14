@@ -37,6 +37,7 @@ import { TopicsexhComponent } from './topics-exh/topicsexh.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ColorchngDirective } from './colorchng.directive';
 import { BtnhighDirective } from './btnhigh.directive';
+import {MatExpansionModule} from '@angular/material/expansion';
 // import { MatButton } from '@angular/material/button';
 
 
@@ -89,7 +90,8 @@ import { BtnhighDirective } from './btnhigh.directive';
     MatSelectModule,
     MatRadioModule,
     // MatButton
-    MatListModule
+    MatListModule,
+    MatExpansionModule
 
     
     
