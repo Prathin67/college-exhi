@@ -46,7 +46,7 @@ export class MenuCmpComponent implements OnInit  {
   wishlist:false
   }])
 
-  // subscription: any
+  
   onDestroy$= new Subject<boolean>()
  
 

@@ -23,9 +23,7 @@ const routes: Routes = [
     {path:'political',component:TopicsexhComponent,canActivate:[canActivate]},
    ]
   },
-  //  {path:'paper',component:TopicsexhComponent,canActivate:[canActivate]},
-  //  {path:'Science',component:TopicsexhComponent,canActivate:[canActivate]},
-  //  {path:'political',component:TopicsexhComponent,canActivate:[canActivate]},
+  
    {path:'wishlist',component:WishlistComponent,canActivate:[canActivate]}
 ];
 

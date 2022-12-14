@@ -13,7 +13,7 @@ import { cards } from '../model';
 export class TopicsexhComponent implements OnInit {
 
   regestrcrd: Observable<cards[]>=of([]) ;
-  // cardData:any;
+ 
   onDestroy$= new Subject<boolean>()
 
   constructor(private service:SampleServiceService,private router:Router){
@@ -21,8 +21,7 @@ export class TopicsexhComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.service.getcards().pipe(takeUntil(this.onDestroy$)).subscribe((d)=>{
-    //   this.regestrcrd=d
+   
 
     this.router.events.pipe(filter(event=>event instanceof NavigationStart)).pipe(takeUntil(this.onDestroy$)).subscribe((active:any)=>{
       if(active.url.includes('paper')){
@@ -51,21 +50,7 @@ export class TopicsexhComponent implements OnInit {
 
   
   }
-  // Out(){
-    
- 
-  //   localStorage.clear()
-  //   this.router.navigate(['/login'])
-  // } 
-  // reg(){
-  //   this.router.navigate(['/menu-cmp'])
-  // }
-  // exhi(){
-  //   this.router.navigate(['/topics-exh'])
-  // }
-  // wish(){
-  //   this.router.navigate(['/wishlist'])
-  // }
+
 
   ngOnDestroy(): void {
     this.onDestroy$.next(true)
